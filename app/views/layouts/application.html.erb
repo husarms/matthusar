@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>matt husar</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Web Fonts -->
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+</head>
+<body class="dark">
+<div class="wrapper">
+
+  <!--=== Header ===-->
+  <div class="header">
+    <div class="container">
+      <!-- Logo -->
+      <!--<%= link_to 'matt husar', root_path, class: 'logo' %>-->
+      <%= link_to root_path, class: '' do %>
+        <%= image_tag 'matthusarlarge.png' %>
+      <% end %>
+      <!--<a href="#">-->
+        <!--<%= image_tag 'matthusarmedium.png' %>-->
+      <!--</a>-->
+      <!-- End Logo -->
+
+      <!-- Toggle get grouped for better mobile display -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+      <!-- End Toggle -->
+    </div><!--/end container-->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <!-- Home -->
+          <li>
+            <%= link_to 'Home', root_path %>
+          </li>
+          <!-- End Home -->
+
+          <!-- Portfolio -->
+          <li>
+            <%= link_to 'Portfolio', portfolio_path %>
+          </li>
+          <!-- End Portfolio -->
+
+          <!-- Blog -->
+          <li>
+            <%= link_to 'Blog', blog_path %>
+          </li>
+          <!-- End Blog -->
+
+          <!-- Gallery -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+              Gallery
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Las Vegas', las_vegas_path %></li>
+              <li><%= link_to 'San Francisco', san_francisco_path %></li>
+              <li><%= link_to 'Los Angeles', los_angeles_path %></li>
+              <li><%= link_to 'Japan', japan_path %></li>
+            </ul>
+          </li>
+          <!-- End Gallery -->
+
+          <!-- Contact -->
+          <li>
+            <%= link_to 'Contact', contact_path %>
+          </li>
+          <!-- End Contact -->
+        </ul>
+      </div><!--/end container-->
+    </div><!--/navbar-collapse-->
+  </div>
+  <!--=== End Header ===-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!--=== Content ===-->
+  <%= yield %>
+  <!--=== End Content ===-->
+
+</div><!--/End Wrapper-->
+</body>
+</html>
